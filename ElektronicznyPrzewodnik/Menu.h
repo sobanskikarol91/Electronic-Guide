@@ -6,7 +6,7 @@ public:
 
 	//void virtual menu() =0;
 
-	int wybor(int max, int min=1) // wartosc min 1 bo zazwyczaj taka bedzie jako pierwsza przy wyborze
+	int wybor(int max, int min = 1) // wartosc min 1 bo zazwyczaj taka bedzie jako pierwsza przy wyborze
 	{
 		char wybor;
 		// dopoki wprowadzone sa bledne dane
@@ -21,5 +21,7 @@ public:
 				cout << "Wprowadzono niepoprawne dane!" << endl;
 		}
 	}
+
+
 };
 
