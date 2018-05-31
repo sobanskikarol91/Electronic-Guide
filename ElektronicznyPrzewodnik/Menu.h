@@ -21,7 +21,5 @@ public:
 				cout << "Wprowadzono niepoprawne dane!" << endl;
 		}
 	}
-
-
 };
 

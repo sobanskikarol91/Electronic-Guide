@@ -1,2 +1,2 @@
 #include "stdafx.h"
-#include "LED.h"
+#include "Dioda.h"

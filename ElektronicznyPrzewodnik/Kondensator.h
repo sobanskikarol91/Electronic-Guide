@@ -9,9 +9,9 @@ public:
 	Kondensator() : Element() {};
 	Kondensator(string nazwa, double pojemnosc) : Element(nazwa, "Kondensator"), pojemnosc(pojemnosc) {};
 
-	virtual void Wyswielt() override
+	virtual void Wyswietl() override
 	{
-		Element::Wyswielt();   // wyswietlamy info z klasy bazowej
+		Element::Wyswietl();   // wyswietlamy info z klasy bazowej
 		cout << "Pojemnosc: " << pojemnosc << endl;
 	}
 };

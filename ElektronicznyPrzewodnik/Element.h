@@ -10,9 +10,9 @@ public:
 	Element() :nazwa("Nieznana"), kategoria("Nieznana") {}
 	Element(string nazwa, string kategoria) : nazwa(nazwa), kategoria(kategoria) {}
 
-	virtual void Wyswielt()
+	virtual void Wyswietl()
 	{
-		cout << "Typ: " << typ << endl;
+		cout << "Kategoria: " << kategoria << endl;
 		cout << "Nazwa: " << nazwa << endl;
 	}
 };
