@@ -7,11 +7,11 @@ class Kondensator : public Element
 	double pojemnosc;
 public:
 	Kondensator() : Element() {};
-	Kondensator(string nazwa, double pojemnosc) : Element(nazwa, "Kondensator"), pojemnosc(pojemnosc) {};
+	Kondensator(string model, double pojemnosc) : Element(model, "Kondensator"), pojemnosc(pojemnosc) {};
 
-	virtual void Wyswietl() override
+	virtual void wyswietl() override
 	{
-		Element::Wyswietl();   // wyswietlamy info z klasy bazowej
+		Element::wyswietl();   // wyswietlamy info z klasy bazowej
 		cout << "Pojemnosc: " << pojemnosc << endl;
 	}
 };

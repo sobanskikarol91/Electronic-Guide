@@ -1,7 +1,7 @@
 #pragma once
-class Elektrolityczny
+#include "Element.h"
+class Elektrolityczny : public Element
 {
 public:
-	Elektrolityczny() {};
 };
 

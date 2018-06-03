@@ -4,16 +4,18 @@
 class Element
 {
 	string kategoria;   // np kondensator, dioda
-	string nazwa; // konkretna nazwa
+	string model; // konkretna nazwa
+
+protected: // konstruktory dostepne tylko przez klasy pochodne,
+	Element() :model("Nieznana"), kategoria("Nieznana") {}
+	Element(string nazwa, string kategoria) : model(nazwa), kategoria(kategoria) {}
 
 public:
-	Element() :nazwa("Nieznana"), kategoria("Nieznana") {}
-	Element(string nazwa, string kategoria) : nazwa(nazwa), kategoria(kategoria) {}
-
-	virtual void Wyswietl()
+	inline string pobierz_kategorie()  { return kategoria; }
+	virtual void wyswietl()
 	{
 		cout << "Kategoria: " << kategoria << endl;
-		cout << "Nazwa: " << nazwa << endl;
+		cout << "Nazwa: " << model << endl;
 	}
 };
 
