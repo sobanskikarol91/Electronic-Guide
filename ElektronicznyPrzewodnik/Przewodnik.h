@@ -9,29 +9,36 @@
 #include "Ceramiczny.h"
 #include "Elektrolityczny.h"
 
+#define SIZE 9
 class Przewodnik : Menu
 {
-	Element * elementy[6];
+	Element * elementy[50];
 public:
 	void wyswietl_elementy(Element * wybrany_element)
 	{
-		for (size_t i = 0; i < 3; i++)
+		for (size_t i = 0; i < SIZE; i++)
 		{
 			if (typeid(*elementy[i]).name() == typeid(*wybrany_element).name())
 			{
 				cout << "====================================" << endl;
-				elementy[i]->wyswietl(); /// polimorfizm
+				elementy[i]->wyswietl(); /// polimorfizm wywolujemy virtualna metode dla odpowiedniego elementu na ktory aktualnie wskazuje wskaznik
 			}
 		}
+		nacisnij_przycisk();
 	}
 
 	void dodajElementy()
 	{
 		//TODO: zwolnic miejsce
-		elementy[0] = new LED("L-2060GD ", "zielony", 10, 2.5,2.5);
-		elementy[1] = new LED("L-2060HD", "Czerwony", 2, 4, 5);
-		elementy[2] = new Zener("z",2,3,3,2);
-		elementy[3] = new Ceramiczny();
+		elementy[0] = new LED("L-2060GD ", "Zielony", 10, 2.5);
+		elementy[1] = new LED("L-2060HD", "Czerwony", 20, 2);
+		elementy[2] = new LED("L-2060SRC", "Czerwony", 20, 1.8);
+		elementy[3] = new Zener("z", 2, 3, 2);
+		elementy[4] = new Ceramiczny("CC-820", 820);
+		elementy[5] = new Ceramiczny("CC-680", 680);
+		elementy[6] = new Ceramiczny("DECE33J222ZC4B", 2200);
+		elementy[7] = new Elektrolityczny("WL2G107M18029BB", 800000);
+		elementy[8] = new Elektrolityczny("WL2A476M10016BB ", 220000);
 	}
 
 	void kondensatory()
@@ -42,8 +49,8 @@ public:
 
 		switch (wybor(3))
 		{
-		case 1: Ceramiczny(); break;
-		case 2: Elektrolityczny(); break;
+		case 1: wyswietl_elementy(&Ceramiczny()); break;
+		case 2: wyswietl_elementy(&Elektrolityczny()); break;
 		case 3: break;
 		default: break;
 		}
@@ -57,11 +64,7 @@ public:
 
 		switch (wybor(3))
 		{
-			case 1:
-			{
-				LED l = LED();
-				wyswietl_elementy(&l); break;
-			}
+		case 1:	wyswietl_elementy(&LED()); break;
 		case 2: wyswietl_elementy(&Zener()); break;
 		case 3: break;
 
@@ -84,6 +87,14 @@ public:
 		}
 
 		menu(); // powrot do menu
+	}
+
+	void nacisnij_przycisk()
+	{
+		cout << endl << "Nacisnij przycisk aby przejsc dalej: " << endl;
+		getchar();
+		getchar();
+		system("cls"); // czysc ekran
 	}
 };
 

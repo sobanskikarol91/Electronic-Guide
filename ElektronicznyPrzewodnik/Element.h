@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-
+#include "EfektyWizualne.h"
 class Element
 {
 	string kategoria;   // np kondensator, dioda
@@ -11,11 +11,9 @@ protected: // konstruktory dostepne tylko przez klasy pochodne,
 	Element(string nazwa, string kategoria) : model(nazwa), kategoria(kategoria) {}
 
 public:
-	inline string pobierz_kategorie()  { return kategoria; }
 	virtual void wyswietl()
 	{
-		cout << "Kategoria: " << kategoria << endl;
-		cout << "Nazwa: " << model << endl;
+		koloruj_txt("Model: " + model,KOLOR::ZIELONY);
 	}
 };
 

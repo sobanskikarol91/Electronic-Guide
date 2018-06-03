@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="Ceramiczny.h" />
     <ClInclude Include="Dioda.h" />
+    <ClInclude Include="EfektyWizualne.h" />
     <ClInclude Include="Elektrolityczny.h" />
     <ClInclude Include="Element.h" />
     <ClInclude Include="Kondensator.h" />
@@ -168,7 +169,6 @@
     <ClCompile Include="LED.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="Przewodnik.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
