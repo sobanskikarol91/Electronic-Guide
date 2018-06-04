@@ -7,13 +7,10 @@ class Element
 	string model; // konkretna nazwa
 
 protected: // konstruktory dostepne tylko przez klasy pochodne,
-	Element() :model("Nieznana"), kategoria("Nieznana") {}
-	Element(string nazwa, string kategoria) : model(nazwa), kategoria(kategoria) {}
+	Element();
+	Element(string nazwa, string kategoria);
 
 public:
-	virtual void wyswietl()
-	{
-		koloruj_txt("Model: " + model,KOLOR::ZIELONY);
-	}
+	virtual void wyswietl();
 };
 

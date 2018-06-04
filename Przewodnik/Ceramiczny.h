@@ -4,7 +4,7 @@
 class Ceramiczny : public Kondensator
 {
 public:
-	Ceramiczny() : Kondensator() {};
-	Ceramiczny(string model, double pojemnosc) : Kondensator(model, pojemnosc) {};
+	Ceramiczny();
+	Ceramiczny(string model, double pojemnosc);
 };
 

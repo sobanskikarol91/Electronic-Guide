@@ -5,15 +5,9 @@ class LED : public Dioda
 {
 	string kolor; // kolor swiecenia
 public:
-	LED() : Dioda() {};
-	LED(string model, string kolor, double max_prad_przewodzenia, double napiecie_przewodzenia) :
-		Dioda(model, max_prad_przewodzenia, napiecie_przewodzenia), kolor(kolor) {};
+	LED();
+	LED(string model, string kolor, double max_prad_przewodzenia, double napiecie_przewodzenia);
 
-
-	virtual void wyswietl() override
-	{
-		Dioda::wyswietl();
-		cout << "Kolor swiecenia: " << kolor << endl;
-	}
+	virtual void wyswietl() override;
 };
 

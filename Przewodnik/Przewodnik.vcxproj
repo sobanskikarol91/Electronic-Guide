@@ -129,7 +129,6 @@
   <ItemGroup>
     <ClCompile Include="Ceramiczny.cpp" />
     <ClCompile Include="Dioda.cpp" />
-    <ClCompile Include="EfektyWizualne.cpp" />
     <ClCompile Include="Elektrolityczny.cpp" />
     <ClCompile Include="Element.cpp" />
     <ClCompile Include="Kondensator.cpp" />
