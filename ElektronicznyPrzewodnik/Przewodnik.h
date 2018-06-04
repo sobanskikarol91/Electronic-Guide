@@ -9,15 +9,24 @@
 #include "Ceramiczny.h"
 #include "Elektrolityczny.h"
 
-#define SIZE 9
+#define SIZE 9 
 class Przewodnik : Menu
 {
 	Element * elementy[50];
+
 public:
+	Przewodnik() { dodajElementy(); }  // dodajemy elementy podczas tworzenia obiektu
+	~Przewodnik() 
+	{
+		for (int i = 0; i < SIZE; i++)
+			delete elementy[i]; // zwalniamy wczesniej zaalokowana dynamicznie pamiec
+	}
+
 	void wyswietl_elementy(Element * wybrany_element)
 	{
 		for (size_t i = 0; i < SIZE; i++)
 		{
+			// Przeszykujemy tablicê
 			if (typeid(*elementy[i]).name() == typeid(*wybrany_element).name())
 			{
 				cout << "====================================" << endl;
@@ -87,14 +96,6 @@ public:
 		}
 
 		menu(); // powrot do menu
-	}
-
-	void nacisnij_przycisk()
-	{
-		cout << endl << "Nacisnij przycisk aby przejsc dalej: " << endl;
-		getchar();
-		getchar();
-		system("cls"); // czysc ekran
 	}
 };
 
