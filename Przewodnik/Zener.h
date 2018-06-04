@@ -12,6 +12,7 @@ public:
 
 	virtual void wyswietl() override
 	{
+		Dioda::wyswietl();
 		cout << "Napiecie przebicia p-n: " << napiêcie_przebicia_z³acza_pn << endl;
 	}
 };

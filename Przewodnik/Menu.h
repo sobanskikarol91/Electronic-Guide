@@ -1,6 +1,7 @@
 #pragma once
-
-// klasa ktora dostarcza funkcjonalnosci potrzebnej do pracy z menu
+#include <iostream>
+using namespace std;
+// klasa abstrakcyjna, ktora dostarcza funkcjonalnosci potrzebnej do pracy z menu
 class Menu
 {
 public:
@@ -25,10 +26,13 @@ public:
 
 	void nacisnij_przycisk()
 	{
-		cout << endl << "Nacisnij przycisk aby przejsc dalej: " << endl;
+		cout << endl << "Nacisnij przycisk i zatwierdz enterem, aby przejsc dalej: " << endl;
 		getchar();
 		getchar();
 		system("cls"); // czysc ekran
 	}
+
+
+	virtual void naglowek() = 0;
 };
 
